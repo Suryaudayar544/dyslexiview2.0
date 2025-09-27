@@ -1,31 +1,49 @@
-#  Word Wonder: Interactive Learning Games
+# DSLEC Game: Dyslexia Support Learning Educational Challenge
 
-Word Wonder is a web-based educational application designed to help children, especially those with dyslexia, improve their reading, recognition, and writing skills through fun and interactive games.
+DSLEC Game is a web-based educational application designed to help children with dyslexia improve their reading, word recognition, color-word association, and handwriting skills through interactive and engaging games.
 
-![Reading Helper Screenshot](https://storage.googleapis.com/lovable-public-assets/response-images/image_e625bb.png)
-![Level 3 Gameplay Screenshot](https://storage.googleapis.com/lovable-public-assets/response-images/image_e625f3.png)
+## Screenshots
+
+To add screenshots:
+1. Run the development server with `npm run dev` and open http://localhost:8080 in your browser.
+2. Take screenshots of key features (e.g., login, dashboard, each game level, reading helper).
+3. Create a `screenshots` folder in the project root (or `public/screenshots` for static serving).
+4. Add the image files (e.g., PNG or JPG) to the folder.
+5. Reference them in this README using Markdown: `![Alt text](screenshots/filename.png)`.
+6. Commit and push the changes: `git add . && git commit -m "Add screenshots to README" && git push`.
+
+Example placeholders (replace with your actual images):
+![Dashboard Screenshot](screenshots/dashboard.png)
+![Level 1 Gameplay Screenshot](screenshots/level1.png)
+![Level 2 Gameplay Screenshot](screenshots/level2.png)
+![Level 3 Handwriting Screenshot](screenshots/level3.png)
+![Reading Helper Screenshot](screenshots/reading-helper.png)
+
+## Recent Updates
+
+- **Level3Game.tsx**: Integrated Google Cloud Vision API for accurate handwriting recognition of drawn letters, with improved feedback and error handling.
+- **index.html**: Added OpenGraph and Twitter meta tags for better social media sharing and SEO, including title, description, and image previews.
 
 ## ✨ Key Features
 
--   **User Authentication**: A simple login system to personalize the experience and track progress.
--   **Gamified Learning**: Three engaging levels that target different learning skills:
-    -   **Level 1 (Word Listen)**: An auditory recognition game where users listen to a word and select the correct one from a list.
-    -   **Level 2 (Color Challenge)**: A cognitive game that challenges users to say the *color* of a word, not the word itself, using the Web Speech API for voice recognition.
-    -   **Level 3 (Write Letters)**: A writing practice game where users draw letters on a canvas, which are then evaluated by a Machine Learning model.
--   **Handwriting Recognition**: Uses Google Cloud Vision API to recognize handwritten letters and provide feedback.
--   **Reading Helper Tool**: An assistive tool that uses **Tesseract.js** (for images) and **pdf.js** (for PDFs) to extract text from uploaded files.
--   **Advanced Text-to-Speech (TTS)**: Extracted text is read aloud using high-quality voices from the **ElevenLabs API** (if a key is provided) or the browser's native Web Speech API.
--   **Dyslexia-Friendly UI**: Text is rendered in dyslexia-friendly fonts and formats to improve readability.
--   **Progress Tracking**: User scores and stars are saved locally, allowing them to track their improvement over time.
+- **User Authentication**: Simple login system to personalize experience and track progress.
+- **Gamified Learning**: Three levels targeting dyslexia-related skills:
+  - **Level 1 (Word Listen)**: Listen to a word and select the matching option from visuals or text.
+  - **Level 2 (Color Challenge)**: Say the color of the word (Stroop effect-inspired), using Web Speech API for recognition.
+  - **Level 3 (Write Letters)**: Draw letters on canvas; recognized via Google Cloud Vision API with feedback.
+- **Handwriting Recognition**: Integrates Google Cloud Vision API for accurate letter detection from drawings.
+- **Reading Helper Tool**: Upload images or PDFs; extracts text using Tesseract.js (images) and pdf.js (PDFs).
+- **Text-to-Speech (TTS)**: Reads extracted text aloud via ElevenLabs API (optional, high-quality) or browser's Web Speech API.
+- **Dyslexia-Friendly UI**: Uses OpenDyslexic font and high-contrast, spaced text for better readability.
+- **Progress Tracking**: Local storage saves scores, stars, and levels completed.
 
 ## 🛠️ Tech Stack
 
--   **Frontend**: React, TypeScript, Vite
--   **UI**: Tailwind CSS, shadcn/ui
--   **Machine Learning**: TensorFlow.js, Tesseract.js
--   **Browser APIs**: Web Speech API (Synthesis & Recognition), Canvas, Local Storage
--   **PDF Parsing**: pdfjs-dist
--   **Text-to-Speech (Optional)**: ElevenLabs API
+- **Frontend**: React, TypeScript, Vite
+- **UI**: Tailwind CSS, shadcn/ui components
+- **APIs & Libraries**: Google Cloud Vision API (handwriting), Tesseract.js (OCR), pdfjs-dist (PDF), Web Speech API (TTS/STT)
+- **Storage**: Local Storage for progress
+- **Text-to-Speech (Optional)**: ElevenLabs API
 
 ## 🚀 Getting Started
 
